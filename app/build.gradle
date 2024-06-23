@@ -18,6 +18,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    dataBinding{
+        enabled=true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -44,23 +48,23 @@ dependencies {
     def preferencesVersion = '1.1.0'
     def room_version = "2.6.1"
 
-    implementation "androidx.room:room-runtime:$room_version"
+    implementation libs.androidx.room.runtime
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
     // To use Kotlin Symbol Processing (KSP)
 //    ksp "androidx.room:room-compiler:$room_version"
 
     // optional - RxJava2 support for Room
-    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation libs.androidx.room.rxjava2
 
     // optional - RxJava3 support for Room
-    implementation "androidx.room:room-rxjava3:$room_version"
+    implementation libs.androidx.room.rxjava3
 
     // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation "androidx.room:room-guava:$room_version"
+    implementation libs.androidx.room.guava
 
     // optional - Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
+    testImplementation libs.androidx.room.testing
 
     implementation libs.retrofit2.retrofit
     implementation libs.retrofit.v230
